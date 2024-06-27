@@ -16,21 +16,21 @@ const Index = () => {
       name: "iPhone",
       description: "This is an iPhone.",
       price: 999.99,
-      image: "/images/iphone.jpg",
+      imageUrl: "https://example.com/iphone.jpg", // Add the image URL for iPhone
     },
     {
       id: 2,
       name: "Mac",
       description: "This is a Mac.",
       price: 1999.99,
-      image: "/images/mac.jpg",
+      imageUrl: "https://example.com/mac.jpg", // Add the image URL for Mac
     },
     {
       id: 3,
       name: "AppleWatch",
       description: "This is an AppleWatch.",
       price: 399.99,
-      image: "/images/applewatch.jpg",
+      imageUrl: "https://example.com/applewatch.jpg", // Add the image URL for AppleWatch
     },
   ];
 
@@ -50,7 +50,7 @@ const Index = () => {
               <CardTitle>{product.name}</CardTitle>
             </CardHeader>
             <CardContent>
-              <img src={product.image} alt={product.name} width={500} height={500} />
+              <img src={product.imageUrl} alt={product.name} className="w-full h-auto mb-4" /> {/* Add the image */}
               <p>{product.description}</p>
               <p>${product.price}</p>
               <Button className="w-full mt-4" onClick={() => handleAddToCart(product)}>
