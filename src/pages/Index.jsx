@@ -6,7 +6,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import Image from 'next/image';
 
 const Index = () => {
   const { addToCart } = useCartStore();
@@ -38,6 +37,7 @@ const Index = () => {
   const handleAddToCart = (product) => {
     addToCart(product);
   };
+
   return (
     <div className="h-screen w-screen flex flex-col items-center justify-center space-y-8 p-4">
       <h1 className="text-4xl font-bold">Welcome to ShopEasy</h1>
@@ -50,7 +50,7 @@ const Index = () => {
               <CardTitle>{product.name}</CardTitle>
             </CardHeader>
             <CardContent>
-              <Image src={product.image} alt={product.name} width={500} height={500} />
+              <img src={product.image} alt={product.name} width={500} height={500} />
               <p>{product.description}</p>
               <p>${product.price}</p>
               <Button className="w-full mt-4" onClick={() => handleAddToCart(product)}>
