@@ -43,14 +43,14 @@ const Index = () => {
       <h1 className="text-4xl font-bold">Welcome to ShopEasy</h1>
       <p className="text-lg text-center">Your one-stop shop for all your needs</p>
       <Separator className="my-4" />
-      <div className="flex flex-col items-center space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {products.map((product) => (
-          <Card key={product.id} className="w-full max-w-md">
+          <Card key={product.id} className="w-full">
             <CardHeader>
               <CardTitle>{product.name}</CardTitle>
             </CardHeader>
             <CardContent>
-              <img src={product.image} alt={product.name} width={500} height={500} />
+              <img src={product.image} alt={product.name} className="w-full h-auto" />
               <p>{product.description}</p>
               <p>${product.price}</p>
               <Button className="w-full mt-4" onClick={() => handleAddToCart(product)}>
