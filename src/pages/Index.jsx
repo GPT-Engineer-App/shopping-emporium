@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
+import Image from 'next/image';
 
 const Index = () => {
   const { addToCart } = useCartStore();
@@ -16,18 +17,21 @@ const Index = () => {
       name: "iPhone",
       description: "This is an iPhone.",
       price: 999.99,
+      image: "/images/iphone.jpg",
     },
     {
       id: 2,
       name: "Mac",
       description: "This is a Mac.",
       price: 1999.99,
+      image: "/images/mac.jpg",
     },
     {
       id: 3,
       name: "AppleWatch",
       description: "This is an AppleWatch.",
       price: 399.99,
+      image: "/images/applewatch.jpg",
     },
   ];
 
@@ -46,6 +50,7 @@ const Index = () => {
               <CardTitle>{product.name}</CardTitle>
             </CardHeader>
             <CardContent>
+              <Image src={product.image} alt={product.name} width={500} height={500} />
               <p>{product.description}</p>
               <p>${product.price}</p>
               <Button className="w-full mt-4" onClick={() => handleAddToCart(product)}>
